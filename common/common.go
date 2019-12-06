@@ -3,6 +3,7 @@ package common
 import (
 	"log"
 	"net"
+	"os/user"
 	"path"
 	"strconv"
 	"strings"
@@ -24,7 +25,11 @@ var DeadlineDuration = time.Second * 60 * 30
 
 //PublicKeyPath concat file path of client key
 func PublicKeyPath() string {
-	return path.Join(PublicKeyDir, PublicKeyFile)
+	user, err := user.Current()
+	if err != nil {
+		panic(err)
+	}
+	return path.Join(user.HomeDir, PublicKeyFile)
 }
 
 //SplitToInt split comma delimited string to int array
