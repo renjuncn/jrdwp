@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/gorilla/websocket"
-	"github.com/leonlee/jrdwp/common"
+	"github.com/renjuncn/jrdwp/common"
 )
 
 type WSServer struct {
