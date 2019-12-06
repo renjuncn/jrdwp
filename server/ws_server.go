@@ -140,7 +140,8 @@ func (server *WSServer) verifyRequest(req *http.Request) bool {
 		log.Println("not allowed port", port)
 		return false
 	}
-
+	// disable token check
+	return true
 	token := req.Header.Get(common.HeaderToken)
 	if common.VerifyToken(server.key, token) {
 		return true
