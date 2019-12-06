@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/leonlee/jrdwp/common"
+	"github.com/renjuncn/jrdwp/common"
 )
 
 //TCPServer for listenning JDWP client
